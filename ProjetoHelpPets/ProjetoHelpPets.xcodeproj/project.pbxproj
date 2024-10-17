@@ -36,6 +36,7 @@
 		784F85CD2CBFD0D900407E64 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 784F85CC2CBFD0D900407E64 /* FirebaseStorage */; };
 		784F85CF2CBFD0D900407E64 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 784F85CE2CBFD0D900407E64 /* FirebaseStorageCombine-Community */; };
 		784F85D12CBFD0D900407E64 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 784F85D02CBFD0D900407E64 /* FirebaseVertexAI-Preview */; };
+		787184F22CC1694B00F9D376 /* SettingsCustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787184F12CC1694B00F9D376 /* SettingsCustomViewCell.swift */; };
 		788D2C5C2CAEEE6300C7FE1A /* SecondContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D2C5B2CAEEE6300C7FE1A /* SecondContainer.swift */; };
 		788D2C5F2CAEF18200C7FE1A /* FirstContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D2C5E2CAEF18200C7FE1A /* FirstContainer.swift */; };
 		788D2C622CAEF2D600C7FE1A /* ThirdContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788D2C612CAEF2D600C7FE1A /* ThirdContainer.swift */; };
@@ -71,6 +72,7 @@
 		784BFE5C2C99D7FA007ABDCA /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		784BFE5F2C99DA21007ABDCA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		784F859F2CBFCF2200407E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		787184F12CC1694B00F9D376 /* SettingsCustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCustomViewCell.swift; sourceTree = "<group>"; };
 		788D2C5B2CAEEE6300C7FE1A /* SecondContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondContainer.swift; sourceTree = "<group>"; };
 		788D2C5E2CAEF18200C7FE1A /* FirstContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstContainer.swift; sourceTree = "<group>"; };
 		788D2C612CAEF2D600C7FE1A /* ThirdContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdContainer.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				784BFE5C2C99D7FA007ABDCA /* SettingsTableViewCell.swift */,
 				784BFE5F2C99DA21007ABDCA /* Category.swift */,
+				787184F12CC1694B00F9D376 /* SettingsCustomViewCell.swift */,
 			);
 			path = SettingsTableView;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				DCF06AA62C860851001A1506 /* TabBarController.swift in Sources */,
 				DCF06A8D2C860142001A1506 /* SceneDelegate.swift in Sources */,
 				DC2637FF2C8F49A0004B8EB2 /* FindPetsCustomView.swift in Sources */,
+				787184F22CC1694B00F9D376 /* SettingsCustomViewCell.swift in Sources */,
 				789159F92CAC4D3500EF6D61 /* SecondContainerCards.swift in Sources */,
 				DC57AD8B2C89E65A002470B5 /* RegisterViewController.swift in Sources */,
 				DC022CE42C88A5BA00F64A6A /* LoginViewController.swift in Sources */,

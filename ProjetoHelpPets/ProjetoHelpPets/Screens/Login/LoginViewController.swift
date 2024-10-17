@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         view.attributedPlaceholder = NSAttributedString(string: "E-mail",
                                                         attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         view.layer.cornerRadius = 18
+        view.textColor = .white
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: view.frame.height))
         view.leftView = paddingView
         view.leftViewMode = .always
@@ -43,6 +44,8 @@ class LoginViewController: UIViewController {
         view.attributedPlaceholder = NSAttributedString(string: "Senha",
                                                         attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         view.layer.cornerRadius = 18
+        view.textColor = .white
+        view.isSecureTextEntry = true
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: view.frame.height))
         view.leftView = paddingView
         view.leftViewMode = .always
@@ -93,6 +96,8 @@ class LoginViewController: UIViewController {
         setConfigurationsOfView()
         subViewsConstraintsConfiguration()
         loginButtonLoginPage.addTarget(self, action: #selector(loginVerification), for: .touchUpInside)
+        emailLoginPageTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        goToRegistrerPage.addTarget(self, action: #selector(goToRegister), for: .touchUpInside)
     }
     
     private func setConfigurationsOfView() {

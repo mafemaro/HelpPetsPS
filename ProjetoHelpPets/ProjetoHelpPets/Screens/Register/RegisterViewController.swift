@@ -106,7 +106,7 @@ class RegisterViewController: UIViewController {
     
     lazy var goToLoginPage: UIButton = {
         let view = UIButton(frame: .zero)
-        view.setTitle("Login", for: .normal)
+        view.setTitle("Cadastrar", for: .normal)
         view.setTitleColor(UIColor.orange, for: .normal)
         view.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -119,6 +119,7 @@ class RegisterViewController: UIViewController {
         subViewsConstraintsConfiguration()
         registerButtonRegisterPage.addTarget(self, action: #selector(registerValidation), for: .touchUpInside)
         emailRegisterPageTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        goToLoginPage.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
     }
     
     private func setConfigurationsOfView() {

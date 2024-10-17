@@ -8,7 +8,7 @@ class TabBarController: UITabBarController {
     }
     
     private func tabBarSetup() {
-        let firstView = UINavigationController(rootViewController: RegisterViewController())
+        let firstView = UINavigationController(rootViewController: HomeViewController())
         let secondView = UINavigationController(rootViewController: FindYourPetViewController())
         let thirdView = UINavigationController(rootViewController: ChatsViewController())
         let fourthView = UINavigationController(rootViewController: FavoritesViewController())

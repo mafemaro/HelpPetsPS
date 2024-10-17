@@ -11,27 +11,33 @@ class SettingsTableViewCell: UITableViewCell {
     
     static let identifier: String = "SettingsTableViewCell"
     
-    lazy var cellTitle: UILabel = {
-        let view = UILabel(frame: .zero)
+    lazy var SettingsCustomView: SettingsCustomViewCell = {
+        let view = SettingsCustomViewCell()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        cellConfiguration()
-        itemOnCellConstraintConfiguration()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.cellConfiguration()
+        self.itemOnCellConstraintConfiguration()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func cellConfiguration() {
-        self.addSubview(cellTitle)
+        self.addSubview(SettingsCustomView)
         contentView.layer.cornerRadius = 15
     }
     
     private func itemOnCellConstraintConfiguration() {
         NSLayoutConstraint.activate([
-            cellTitle.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-            cellTitle.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
+            SettingsCustomView.topAnchor.constraint(equalTo: self.topAnchor),
+            SettingsCustomView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            SettingsCustomView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            SettingsCustomView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 

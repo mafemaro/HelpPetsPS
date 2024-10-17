@@ -10,11 +10,13 @@ class SettingsViewController: UIViewController {
         return view
     }()
     
-    private lazy var settingsTableView: UITableView = {
-        let view = UITableView(frame: .zero)
+    lazy var settingsTableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
         view.register(SettingsTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         view.rowHeight = UITableView.automaticDimension
         view.separatorStyle = .none
+        view.dataSource = self
+        view.delegate = self
         view.backgroundColor = .clear
         view.allowsSelection = true
         view.isUserInteractionEnabled = true
@@ -40,9 +42,6 @@ class SettingsViewController: UIViewController {
         
         view.addSubview(headerComponent)
         view.addSubview(settingsTableView)
-        
-        settingsTableView.dataSource = self
-        settingsTableView.delegate = self
     }
     
     private func subViewsConstraintsConfiguration() {
@@ -51,7 +50,7 @@ class SettingsViewController: UIViewController {
             headerComponent.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             headerComponent.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
             
-            settingsTableView.topAnchor.constraint(equalTo: headerComponent.bottomAnchor, constant: 40),
+            settingsTableView.topAnchor.constraint(equalTo: headerComponent.bottomAnchor, constant: 25),
             settingsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             settingsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             settingsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
@@ -72,9 +71,9 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SettingsTableViewCell else {return .init()}
-        cell.cellTitle.text = "TITULO"
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? SettingsTableViewCell
+        cell?.SettingsCustomView.configureComponentData(text: "asdljn")
+        return cell ?? UITableViewCell()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,9 +86,8 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = PetRegisterViewController()
-        let nc = UINavigationController(rootViewController: vc)
-        nc.modalPresentationStyle = .fullScreen
-        present(nc, animated: true)
+        let vc = RegisterViewController()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
